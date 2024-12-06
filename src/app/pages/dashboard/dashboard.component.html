@@ -1,1 +1,30 @@
-<p>dashboard works!</p>
+<div class="h-screen w-full bg-gray-900g grid grid-cols-12">
+  <div class="md:col-span-2 h-full bg-white">
+    <div class="p-4 flex items-center gap-2">
+      <span class="font-bold text-3xl">Online</span>
+      <span>Store</span>
+    </div>
+  </div>
+  <div class="sm:col-span-10 p-4">
+    <div class="w-full flex justify-items-between p-3 mb-3">
+      <div>
+        Bonjour et bon retour, <span class="font-semibold">User doe</span>
+      </div>
+      <div class="flex gap-2">
+        <div>Notification</div>
+        <div>Logout</div>
+      </div>
+    </div>
+
+    <div class="rounded-xl bg-[#f5f5f5] p-4 h-full">
+      <div>Vue d'ensemble de votre projet</div>
+
+      <div class="grid grid-cols-4 gap-4 mt-4">
+        <app-stat-card-item></app-stat-card-item>
+        <app-stat-card-item></app-stat-card-item>
+        <app-stat-card-item></app-stat-card-item>
+        <app-stat-card-item></app-stat-card-item>
+      </div>
+    </div>
+  </div>
+</div>
