@@ -1,0 +1,14 @@
+<app-table-template
+  [title]="'Orders'"
+  [columns]="columns"
+  [data]="data"
+  [showSearch]="true"
+  [showFilters]="false"
+  [showPagination]="true"
+  [pageSizes]="[10, 20, 50]"
+  (search)="onSearch($event)"
+  (filter)="onFilter($event)"
+  (pageChange)="onPageChange($event)"
+  (buttonClick)="onButtonClick($event)"
+>
+</app-table-template>

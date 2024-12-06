@@ -1,29 +1,83 @@
-<div class="h-screen w-full bg-gray-900g grid grid-cols-12">
-  <div class="md:col-span-2 h-full bg-white">
-    <div class="p-4 flex items-center gap-2">
+<div
+  class="h-screen w-full bg-gray-900g grid grid-cols-12 overflow-y-hidden bg-red-500"
+>
+  <div class="hidden md:block md:col-span-2 h-full bg-white">
+    <div class="p-4 flex items-center gap-2 bg-red-500 text-white">
       <span class="font-bold text-3xl">Online</span>
-      <span>Store</span>
+      <span class="text-xs">Store</span>
     </div>
   </div>
-  <div class="sm:col-span-10 p-4">
-    <div class="w-full flex justify-items-between p-3 mb-3">
+  <div class="col-span-12 md:col-span-10 p-4 overflow-y-auto bg-[#f5f5f5]">
+    <div
+      class="hidden w-full md:flex justify-items-between mb-3 bg-white p-6 rounded-lg"
+    >
       <div>
         Bonjour et bon retour, <span class="font-semibold">User doe</span>
       </div>
       <div class="flex gap-2">
-        <div>Notification</div>
-        <div>Logout</div>
+        <div>
+          <lucide-angular
+            [img]="notification"
+            class="hover:text-red-500 w-8"
+          ></lucide-angular>
+        </div>
+        <div>
+          <lucide-angular
+            [img]="logout"
+            class="hover:text-red-500 w-8 cursor-pointer"
+          ></lucide-angular>
+        </div>
       </div>
     </div>
 
-    <div class="rounded-xl bg-[#f5f5f5] p-4 h-full">
-      <div>Vue d'ensemble de votre projet</div>
+    <div class="rounded-xl h-full flex flex-col gap-12 mb-8 pb-12">
+      <!-- Block des statistique -->
+      <div>
+        <div class="text-xl font-semibold">Vue d'ensemble de votre projet</div>
 
-      <div class="grid grid-cols-4 gap-4 mt-4">
-        <app-stat-card-item></app-stat-card-item>
-        <app-stat-card-item></app-stat-card-item>
-        <app-stat-card-item></app-stat-card-item>
-        <app-stat-card-item></app-stat-card-item>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+          <app-stat-card-item></app-stat-card-item>
+          <app-stat-card-item></app-stat-card-item>
+          <app-stat-card-item></app-stat-card-item>
+          <app-stat-card-item></app-stat-card-item>
+        </div>
+      </div>
+
+      <!-- Last & new orders-->
+      <div>
+        <div class="grid grid-cols-4 gap-6 mt-4">
+          <div class="col-span-4 md:col-span-3">
+            <div class="flex justify-items-between mb-4">
+              <div class="text-xl font-semibold">Dernières commandes</div>
+              <div class="text-red-500 flex items-center font-semibold">
+                <span> voir tout</span
+                ><lucide-angular
+                  [img]="arrowRightIcon"
+                  class="text-red-500 w-4"
+                ></lucide-angular>
+              </div>
+            </div>
+            <app-last-orders-table></app-last-orders-table>
+          </div>
+          <div class="col-span-4 md:col-span-1">
+            <div class="flex justify-items-between mb-4">
+              <div class="text-xl font-semibold">Top aricles</div>
+              <div class="text-red-500 flex items-center font-semibold">
+                <span> voir tout</span
+                ><lucide-angular
+                  [img]="arrowRightIcon"
+                  class="text-red-500 w-4"
+                ></lucide-angular>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 md:flex md:flex-col gap-3">
+              <app-last-order-item></app-last-order-item>
+              <app-last-order-item></app-last-order-item>
+              <app-last-order-item></app-last-order-item>
+              <app-last-order-item></app-last-order-item>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
